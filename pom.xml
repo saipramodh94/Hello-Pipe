@@ -26,6 +26,15 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployement>
+						<uri>https:/anypoint.mulesoft.com</uri>
+						<muleversion>${app.runtime}</muleversion>
+						<username>saipramodh94s</username>
+						<passsword>Saipramodh94s</passsword>
+						<applicationName>artifactId</applicationName>
+						<environment>${environment}</environment>
+						<environment></environment>						
+					</cloudHubDeployement>
 				</configuration>
 			</plugin>
 		</plugins>
