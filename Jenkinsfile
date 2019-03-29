@@ -11,7 +11,7 @@ pipeline{
 		}
 		stage('DEPLOY'){
 			steps{				
-				bat 'mvn deploy -P cloudhub -Dmule.version=4.1.4 -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}'							
+				bat 'mvn -f mule-jenkins-pipeline/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Sandbox -DmuleDeploy}'							
 			}
 		}
 	}		
