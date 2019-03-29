@@ -11,7 +11,7 @@ pipeline{
 		}
 		stage('DEPLOY'){
 			steps{				
-				bat 'mvn -f pom.xml package deploy -P -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Sandbox -DmuleDeploy'							
+				bat 'mvn deploy -P cloudhub -Dmule.version=4.1.4 -Danypoint.username=${ANYPOINT_CREDENTIALS_USR} -Danypoint.password=${ANYPOINT_CREDENTIALS_PSW}'							
 			}
 		}
 	}		
