@@ -17,28 +17,36 @@
 		<app.runtime>4.1.4</app.runtime>
 		<mule.maven.plugin.version>3.1.6</mule.maven.plugin.version>
 	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<cloudHubDeployement>
-						<uri>https:/anypoint.mulesoft.com</uri>
-						<muleversion>${app.runtime}</muleversion>
-						<username>saipramodh94s</username>
-						<passsword>Saipramodh94s</passsword>
-						<applicationName>artifactId</applicationName>
-						<environment>${environment}</environment>
-						<environment></environment>						
-					</cloudHubDeployement>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.mule.tools.maven</groupId>
+					<artifactId>mule-maven-plugin</artifactId>
+					<version>${mule.maven.plugin.version}</version>
+					<extensions>true</extensions>
+					<configuration>
+						<cloudHubDeployement>
+							<uri>https:/anypoint.mulesoft.com</uri>
+							<muleversion>4.1.4</muleversion>
+							<username>saipramodh94s</username>
+							<passsword>Saipramodh94s</passsword>
+							<applicationName>artifactId</applicationName>
+							<environment>Sandbox</environment>													
+						</cloudHubDeployement>
+					</configuration>
+					<executions>
+			          <execution>
+            			<id>deploy</id>
+            			<phase>deploy</phase>
+            			<goals>
+              				<goal>deploy</goal>
+            			</goals>
+          			</execution>
+        			</executions>
+				</plugin>				
+			</plugins>
+		</build>
 
 	<dependencies>
         <dependency>
@@ -70,6 +78,10 @@
         </repository>
     </repositories>
     <pluginRepositories>
+    	<pluginRepository>
+        	<id>mule-public</id>
+        	<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+    	</pluginRepository>
         <pluginRepository>
             <id>mulesoft-releases</id>
             <name>mulesoft release repository</name>

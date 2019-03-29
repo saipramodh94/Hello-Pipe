@@ -6,16 +6,16 @@ pipeline{
 	stages{
 		stage('BUILD'){
 			steps {
-				withMaven(maven:'maven'){
+				
 					bat 'mvn -f mule-jenkins-pipeline/pom.xml clean install'
-				}
+				
 			}
 		}
 		stage('DEPLOY'){
 			steps{
-				withMaven(maven:'maven'){
-					bat 'mvn -f mule-jenkins-pipeline/pom.xml package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Sandbox -DmuleDeploy'			
-				}
+				
+					bat 'mvn -f mule-jenkins-pipeline/pom.xml clean package deploy -Dusername=$ANYPOINT_USR -Dpassword=$ANYPOINT_PSW -Denvironment=Sandbox -DmuleDeploy'			
+				
 			}
 		}
 	}		
