@@ -21,30 +21,21 @@
 		<build>
 			<plugins>
 				<plugin>
-					<groupId>org.mule.tools.maven</groupId>
-					<artifactId>mule-maven-plugin</artifactId>
-					<version>${mule.maven.plugin.version}</version>
-					<extensions>true</extensions>
-					<configuration>
-						<cloudHubDeployement>
-							<uri>https:/anypoint.mulesoft.com</uri>
-							<muleversion>4.1.4</muleversion>
-							<username>saipramodh94s</username>
-							<passsword>Saipramodh94s</passsword>
-							<applicationName>${artifactId}</applicationName>
-							<environment>Sandbox</environment>													
-						</cloudHubDeployement>
-					</configuration>
-					<executions>
-			          <execution>
-            			<id>deploy</id>
-            			<phase>deploy</phase>
-            			<goals>
-              				<goal>deploy</goal>
-            			</goals>
-          			</execution>
-        			</executions>
-				</plugin>				
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>${project.artifactId}</applicationName>
+						<environment>${environment}</environment>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>		
 			</plugins>
 		</build>
 
